@@ -1,0 +1,16 @@
+.navbar{
+    background-color: #2D2D2D;
+    color: white;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding-left: 3.5rem;
+}
+.about:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.logo{
+    margin-left: 88rem;
+}

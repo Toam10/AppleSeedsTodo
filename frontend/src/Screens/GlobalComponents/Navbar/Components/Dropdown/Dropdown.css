@@ -1,0 +1,7 @@
+.dropdown{
+    width: 12rem;
+}
+.dropdown:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
