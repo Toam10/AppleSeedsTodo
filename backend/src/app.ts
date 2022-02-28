@@ -4,8 +4,7 @@ import morgan from 'morgan';
 import helmet from 'helmet';
 
 import { corsConfig } from './config';
-import { indexRouter } from './routers/index.router';
-
+import { projectsRouter } from './routers/projects.router';
 
 const app = express();
 
@@ -15,7 +14,7 @@ app.use(helmet());
 app.use(express.json({}));
 app.use(express.urlencoded({ extended: false }));
 
-app.use('/',indexRouter);
+app.use('/', projectsRouter);
 
 app.use('*', ((err, req, res, next) => {
   res.status(500).send('Server Error');
