@@ -1,12 +1,14 @@
 {
   "compileOnSave": false,
   "include": ["src/**/*"],
-  "exclude": ["node_modules"],
+  "exclude": ["src/types/*.ts", "node_modules", ".vscode"],
   "compilerOptions": {
-    "typeRoots": ["./src/types", "./node_modules/@types"],
-    "esModuleInterop": true,
-    "target": "es2021",
     "module": "commonjs",
+    "rootDir": "src",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "typeRoots": ["./src/types", "./node_modules/@types"],
+    "target": "es2021",
     "moduleResolution": "node",
     "outDir": "dist",
     "baseUrl": ".",
