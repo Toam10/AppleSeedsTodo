@@ -2,7 +2,11 @@
     --navbarColor: #2D2D2D;
     --navbarFontColor: #FFF;
 }
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .navbar{
     background-color: var(--navbarColor);
     color: var(--navbarFontColor);
