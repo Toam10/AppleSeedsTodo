@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 :root{
     --navbarColor: #2D2D2D;
     --navbarFontColor: #FFF;
@@ -15,11 +16,31 @@
     align-items: center;
     gap: 48px;
     padding-left: 56px;
+=======
+.navbar{
+    background-color: var(--darkGrey);
+    color: var(--white);
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 56px;
+}
+.leftSide{
+    display: flex;
+    align-items: center;
+    gap: 48px;
+
+>>>>>>> tg2-35_navbar_basic-design
 }
 .about:hover{
     text-decoration: underline;
     cursor: pointer;
 }
 .logo{
+<<<<<<< HEAD
     margin-left: 1408px;
+=======
+    padding-right: 20px;
+>>>>>>> tg2-35_navbar_basic-design
 }
