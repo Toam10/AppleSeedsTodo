@@ -1,5 +1,6 @@
 import React from 'react';
 import DefaultMode__Open from './Components/DefaultMode/DefaultMode__Open';
+import DefaultMode__Closed from './Components/DefaultMode/DefaultMode__Closed';
 import Dropdown from './Components/Dropdown/Dropdown';
 import './Navbar.css';
 import '../../../Style/Colors.css'
@@ -9,7 +10,7 @@ function Navbar() {
         <div>
             <div className='navbar'>
                 <div className='navbar__activemode_leftSide'>
-                    <DefaultMode__Open />
+                    <DefaultMode__Closed />
                     <h2 className='about'>About</h2>
                 </div>
                 <div className='navbar__activemode_rightSide'>
@@ -17,7 +18,7 @@ function Navbar() {
                 </div>
 
             </div>
-            <Dropdown />
+            {/* <Dropdown /> */}
         </div>
     );
 };
