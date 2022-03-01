@@ -1,0 +1,7 @@
+.activeMode{
+    width: 192px;
+}
+.activeMode:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
