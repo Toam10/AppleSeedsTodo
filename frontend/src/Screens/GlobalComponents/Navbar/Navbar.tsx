@@ -1,5 +1,5 @@
 import React from 'react';
-import DefaultMode from './Components/Dropdown/DefaultMode';
+import DefaultMode from './Components/DefaultMode/DefaultMode';
 import './Navbar.css';
 import '../../../Style/Colors.css'
 
