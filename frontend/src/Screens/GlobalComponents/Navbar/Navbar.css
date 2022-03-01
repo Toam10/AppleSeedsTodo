@@ -1,25 +1,22 @@
-:root{
-    --navbarColor: #2D2D2D;
-    --navbarFontColor: #FFF;
-}
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 .navbar{
-    background-color: var(--navbarColor);
-    color: var(--navbarFontColor);
-    height: 3.5rem;
+    background-color: var(--darkGrey);
+    color: var(--white);
+    height: 56px;
     display: flex;
     align-items: center;
-    gap: 3rem;
-    padding-left: 3.5rem;
+    justify-content: space-between;
+    padding-left: 56px;
+}
+.leftSide{
+    display: flex;
+    align-items: center;
+    gap: 48px;
+
 }
 .about:hover{
     text-decoration: underline;
     cursor: pointer;
 }
 .logo{
-    margin-left: 88rem;
+    padding-right: 20px;
 }
