@@ -1,0 +1,26 @@
+/* .dropdown{
+    width: 192px;
+} */
+.dropdown:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.dropdown__menu{
+    background-color: var(--lightGrey);
+    width: 348px;
+    border-bottom-right-radius: 22px;
+    border-bottom-left-radius: 22px;
+}
+.dropdown__list{
+    list-style: none;
+}
+.dropdown__list__item{
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px var(--white) solid;
+    padding: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
