@@ -1,5 +1,6 @@
 import React from "react";
 import './Dropdown.css';
+import '../../../../../Style/FontSize.css'
 
 function Dropdown() {
     return (
