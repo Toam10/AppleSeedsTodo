@@ -1,0 +1,22 @@
+.navbar{
+    background-color: var(--darkGrey);
+    color: var(--white);
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 56px;
+}
+.leftSide{
+    display: flex;
+    align-items: center;
+    gap: 48px;
+
+}
+.about:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.logo{
+    padding-right: 20px;
+}

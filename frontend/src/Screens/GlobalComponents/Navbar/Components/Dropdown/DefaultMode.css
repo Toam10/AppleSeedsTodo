@@ -1,0 +1,7 @@
+.defaultMode{
+    width: 192px;
+}
+.defaultMode:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
