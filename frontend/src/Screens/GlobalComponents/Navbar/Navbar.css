@@ -10,16 +10,16 @@
 .navbar{
     background-color: var(--navbarColor);
     color: var(--navbarFontColor);
-    height: 3.5rem;
+    height: 56px;
     display: flex;
     align-items: center;
-    gap: 3rem;
-    padding-left: 3.5rem;
+    gap: 48px;
+    padding-left: 56px;
 }
 .about:hover{
     text-decoration: underline;
     cursor: pointer;
 }
 .logo{
-    margin-left: 88rem;
+    margin-left: 1408px;
 }
