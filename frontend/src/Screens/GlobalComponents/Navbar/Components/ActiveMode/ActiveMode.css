@@ -1,7 +1,15 @@
-.activeMode{
+/* .activeMode{
     width: 192px;
 }
 .activeMode:hover{
     text-decoration: underline;
     cursor: pointer;
+} */
+.activemode__item:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.Navbar__activemode{
+    display: flex;
+    gap: 48px;
 }

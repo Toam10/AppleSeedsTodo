@@ -3,7 +3,11 @@ import './ActiveMode.css';
 
 function ActiveMode() {
     return (
-        <h2 className='activeMode'>Select Project &nbsp;&#9660;</h2>
+        <div className="Navbar__activemode">
+            <h2 className='activemode__item'>Project 1 &nbsp;&#9654;</h2>
+            <h2 className='activemode__item'>Board</h2>
+            <h2 className='activemode__item'>Backlog</h2>
+        </div>
     );
 };
 

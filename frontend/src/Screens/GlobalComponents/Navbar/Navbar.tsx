@@ -6,7 +6,7 @@ import '../../../Style/Colors.css'
 function Navbar() {
     return (
         <div className='navbar'>
-            <div className='leftSide'>
+            <div className='navbar__activemode_leftSide'>
                 <ActiveMode />
                 <h2 className='about'>About</h2>
             </div>
