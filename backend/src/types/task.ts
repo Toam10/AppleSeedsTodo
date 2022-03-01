@@ -4,7 +4,7 @@ export interface TASK extends Document {
   name: string
   description: string
   createdAt: Date
-  urgency: Number
-  status: Number
+  urgency: number
+  status: number
   comments: [string]
 }
