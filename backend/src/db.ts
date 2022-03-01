@@ -1,23 +1,29 @@
-import * as Mongoose from "mongoose";
-import {Project} from "./models/project";
+import * as mongoose from "mongoose";
+import { Project } from "./models/project";
+// tslint:disable-next-line:no-console
 
 const uri = "mongodb://localhost:27017/AppleSeedsTodo";
 
-let database: Mongoose.Connection; export const connect = () => {  // add your own uri below
-    if (database) {
-        return;
-    } Mongoose.connect(uri); database = Mongoose.connection; database.once("open", async () => {
-        // tslint:disable-next-line:no-console
-        console.log("Connected to database");
-    });
-    database.on("error", () => {
-        // tslint:disable-next-line:no-console
-        console.log("Error connecting to database");
-    });
+type TDBInput = {
+    db: string;
 };
-export const disconnect = () => {
 
-    if (!database) {
-        return;
-    } Mongoose.disconnect();
+export default ({ db }: TDBInput) => {
+    const connect = () => {
+        mongoose
+            .connect(db, {
+            })
+            .then(() => {
+                // tslint:disable-next-line:no-console
+                return console.info(`Successfully connected to Database`);
+            })
+            .catch((error) => {
+                // tslint:disable-next-line:no-console
+                console.error('Error connecting to database: ', error);
+                return process.exit(1);
+            });
+    };
+    connect();
+
+    mongoose.connection.on('disconnected', connect);
 };

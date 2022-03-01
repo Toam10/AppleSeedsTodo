@@ -57,4 +57,4 @@ const projectSchema: Schema = new Schema(
 )
 const Task = model<TASK>("Task", taskSchema)
 const Project = model<PROJECT>("Project", projectSchema)
-export {Project};
+export {Project, Task};
