@@ -5,12 +5,14 @@ type Comment = {
 
 type Comments = Comment[];
 
-type Task = {
+export type Task = {
   taskName: string;
   timestamps: Date;
   urgency: number;
   procedure: number;
   comments: Comments;
+  descriptionTask: string;
+  id: string;
 };
 
 type Tasks = Task[];
@@ -38,6 +40,9 @@ const projects: Project[] = [
         timestamps: new Date(),
         urgency: 0,
         procedure: 2,
+        id: '111',
+        descriptionTask:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rutrum odio vitae maximus venenatis. Nulla',
         comments: [
           {
             comment: 'Lorem ipsum dolor sit amet',
@@ -54,6 +59,9 @@ const projects: Project[] = [
         timestamps: new Date(),
         urgency: 2,
         procedure: 0,
+        id: '122',
+        descriptionTask:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rutrum odio vitae maximus venenatis. Nulla',
         comments: [
           {
             comment: 'Lorem ipsum dolor sit amet',
@@ -81,6 +89,9 @@ const projects: Project[] = [
         timestamps: new Date(),
         urgency: 1,
         procedure: 0,
+        id: '211',
+        descriptionTask:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rutrum odio vitae maximus venenatis. Nulla',
         comments: [
           {
             comment: 'Lorem ipsum dolor sit amet',
@@ -97,6 +108,9 @@ const projects: Project[] = [
         timestamps: new Date(),
         urgency: 2,
         procedure: 1,
+        id: '222',
+        descriptionTask:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rutrum odio vitae maximus venenatis. Nulla',
         comments: [
           {
             comment: 'Lorem ipsum dolor sit amet',
