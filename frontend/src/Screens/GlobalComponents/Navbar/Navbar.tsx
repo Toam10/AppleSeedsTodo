@@ -1,13 +1,13 @@
 import React from 'react';
-import DefaultMode from './Components/Dropdown/DefaultMode';
+import ActiveMode from './Components/ActiveMode/ActiveMode';
 import './Navbar.css';
 import '../../../Style/Colors.css'
 
 function Navbar() {
     return (
         <div className='navbar'>
-            <div className='leftSide'>
-                <DefaultMode />
+            <div className='navbar__activemode_leftSide'>
+                <ActiveMode />
                 <h2 className='about'>About</h2>
             </div>
             <div className='rightSide'>
