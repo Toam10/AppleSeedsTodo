@@ -30,9 +30,11 @@ async function getAllProjectDetails(req: Request, res: Response) {
 
 async function createProject(req: Request, res: Response) {
   try {
-    const { name, description, goal, status } = req.body;
+    const { name, description, goal, labels } = req.body;
 
-    // const newProject = new projects({ name, description, goal, status })
+    labels: labels.split(',').map((label: any) => label.trim());
+
+    // const newProject = new projects({ name, description, goal, labels })
     // const reciveNewProject = await newProject.save();
 
     // res.status(200).send(reciveNewProject);

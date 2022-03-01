@@ -19,10 +19,10 @@ export type Project = {
   name: string;
   description: string;
   goal: string;
-  status: boolean;
   timestamps: Date;
   tasks?: Tasks;
   id: string;
+  labels: string[];
 };
 
 const projects: Project[] = [
@@ -31,13 +31,13 @@ const projects: Project[] = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rutrum odio vitae maximus venenatis. Nulla hendrerit malesuada tincidunt. Aenean ornare cursus posuere. Donec et elit justo. Sed nec felis vel nibh vestibulum interdum. Sed varius ex purus, congue volutpat erat commodo vel. Curabitur nibh nisl, feugiat tempus nisi sit amet, semper',
     goal: 'Lorem ipsum dolor sit amet, consectetur',
-    status: true,
+    labels: ['TODO', 'PROGRESS', 'DONE'],
     tasks: [
       {
         taskName: 'Lorem ipsum',
         timestamps: new Date(),
         urgency: 0,
-        procedure: 2,
+        procedure: -1,
         comments: [
           {
             comment: 'Lorem ipsum dolor sit amet',
@@ -74,7 +74,7 @@ const projects: Project[] = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rutrum odio vitae maximus venenatis. Nulla hendrerit malesuada tincidunt. Aenean ornare cursus posuere. Donec et elit justo. Sed nec felis vel nibh vestibulum interdum. Sed varius ex purus, congue volutpat erat commodo vel. Curabitur nibh nisl, feugiat tempus nisi sit amet, semper',
     goal: 'Lorem ipsum dolor sit amet, consectetur',
-    status: false,
+    labels: ['TODO', 'PROGRESS', 'DONE'],
     tasks: [
       {
         taskName: 'Lorem ipsum',
