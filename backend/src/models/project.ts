@@ -1,5 +1,36 @@
-import { ITodo } from "./../types/project"
+import { PROJECT } from "./../types/project"
+import { TASK } from "./../types/task"
 import { model, Schema } from "mongoose"
+
+
+const taskSchema: Schema = new Schema(
+  {
+    name: {
+      type: String,
+    },
+
+    description: {
+      type: String,
+    },
+
+    createdAt: {
+      type: Date,
+      default: Date.now,
+    },
+
+    urgency: {
+        type: Number,
+        default:0,
+      },
+
+    status: {
+      type: Number,
+      default:-1,
+    },
+    comments: [String],
+  },
+  {timestamps: true}
+)
 
 const projectSchema: Schema = new Schema(
   {
@@ -10,20 +41,20 @@ const projectSchema: Schema = new Schema(
 
     description: {
       type: String,
-      required: true,
     },
 
     goal: {
         type: String,
-        required: true,
       },
 
-    status: {
-      type: Boolean,
-      required: true,
+    labels: {
+      type: [String],
+      default:["TODO","PROCESS","DONE"],
     },
+    tasks: [taskSchema],
   },
   {timestamps: true}
 )
-
-export default model<ITodo>("Todo", projectSchema)
+const Task = model<TASK>("Task", taskSchema)
+const Project = model<PROJECT>("Project", projectSchema)
+export {Task, Project};
