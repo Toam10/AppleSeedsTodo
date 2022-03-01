@@ -1,7 +1,7 @@
 import { app } from './app';
 import {connect} from "mongoose"
 
-const URI = `mongodb://localhost:27017/AppleSeedsTodo`
+const URI = `mongodb://127.0.0.1:27017/AppleSeedsTodo`
 connect(URI)
 
 const PORT = 8080;
