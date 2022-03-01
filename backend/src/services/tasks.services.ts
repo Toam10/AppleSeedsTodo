@@ -1,34 +1,35 @@
-import { Project, projects, Task } from '../fakeData/project.fakeData';
+// // import { Project, projects, Task } from '../fakeData/project.fakeData';
+// import { Project } from '../models/project';
 
-async function findProjectByIdProject(idProject: string) {
-  const projectDetail = projects.find((project) => project.id === idProject);
-  // const projectDetail =await projects.findById(idProject);
+// async function findProjectByIdProject(idProject: string) {
+//   // const projectDetail = projects.find((project) => project.id === idProject);
+//   const projectDetail = await Project.findById(idProject);
 
-  if (!projectDetail) throw new Error('Not found a Project');
+//   if (!projectDetail) throw new Error('Not found a Project');
 
-  return projectDetail;
-}
+//   return projectDetail;
+// }
 
-async function findTasksByIdProject(idProject: string) {
-  const projectDetail: Project = await findProjectByIdProject(idProject);
+// async function findTasksByIdProject(idProject: string) {
+//   const projectDetail = await findProjectByIdProject(idProject);
 
-  if (!projectDetail.tasks || projectDetail.tasks.length === 0) throw new Error('Not have Task yet');
+//   if (!projectDetail.tasks || !projectDetail.tasks.length) throw new Error('Not have Task yet');
 
-  const { tasks, name } = projectDetail;
+//   const { tasks, name } = projectDetail;
 
-  return { name, tasks };
-}
+//   return { name, tasks };
+// }
 
-async function findTaskByIdProjectAndIdTask(idProject: string, idTasks: string) {
-  const tasksDetails: any = await findTasksByIdProject(idProject);
+// async function findTaskByIdProjectAndIdTask(idProject: string, idTasks: string) {
+//   const tasksDetails = await findTasksByIdProject(idProject);
 
-  const { name, tasks } = tasksDetails;
-  const taskDetail = tasks.find((task: Task) => task.id === idTasks);
-  // const taskDetail =await tasks.findById(idTasks);
+//   const { name, tasks } = tasksDetails;
+//   const taskDetail = tasks.find((task) => task.id === idTasks);
+//   // const taskDetail =await tasks.findById(idTasks);
 
-  if (!taskDetail) throw new Error('Not found a Tasks');
+//   if (!taskDetail) throw new Error('Not found a Tasks');
 
-  return { name, taskDetail };
-}
+//   return { name, taskDetail };
+// }
 
-export { findProjectByIdProject, findTasksByIdProject, findTaskByIdProjectAndIdTask };
+// export { findProjectByIdProject, findTasksByIdProject, findTaskByIdProjectAndIdTask };

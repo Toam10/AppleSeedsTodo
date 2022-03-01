@@ -1,31 +1,31 @@
 import { Request, Response } from 'express';
-import { Project, projects, Task } from '../fakeData/project.fakeData';
-import { findProjectByIdProject, findTasksByIdProject, findTaskByIdProjectAndIdTask } from '../services/tasks.services';
-async function getAllTaskDetails(req: Request, res: Response) {
-  try {
-    const tasksFilter: Project[] = projects.map((project): Project => {
-      const { tasks, name } = project;
+import { Project, Task } from '../models/project';
 
-      return { name, tasks } as Project;
-    });
-    res.status(200).send(tasksFilter);
+async function fetchTaskDetails(req: Request, res: Response) {
+  try {
+    const taskDetail = await Task.find();
+    if (!taskDetail) throw new Error('Not found a Task');
+    res.status(200).send(taskDetail);
   } catch (error) {
-    res.status(400).send(error);
+    res.status(400).send((error as Error).message);
   }
 }
-async function getTasksDetailsByIdProject(req: Request, res: Response) {
+async function fetchTaskDetailsByIdProject(req: Request, res: Response) {
   try {
-    const tasksDetails = await findTasksByIdProject(req.params.idProject);
+    const taskDetails = await Task.find({ idProject: req.params.idProject });
+    if (!taskDetails) throw new Error('Not found a Project');
+    if (taskDetails.length) throw new Error('Not found a Task');
 
-    res.status(200).send(tasksDetails as any);
+    res.status(200).send(taskDetails);
   } catch (error) {
     res.status(400).send((error as Error).message);
   }
 }
 
-async function getTaskDetailsByIdTask(req: Request, res: Response) {
+async function fetchTaskDetailsByIdTask(req: Request, res: Response) {
   try {
-    const taskDetail = await findTaskByIdProjectAndIdTask(req.params.idProject, req.params.idTask);
+    const taskDetail = await Task.findById(req.params.idTask);
+    if (!taskDetail) throw new Error('Not found a Task');
 
     res.status(200).send(taskDetail);
   } catch (error) {
@@ -33,40 +33,48 @@ async function getTaskDetailsByIdTask(req: Request, res: Response) {
   }
 }
 
-async function changeTasksProcedure(req: Request, res: Response) {
+async function createTask(req: Request, res: Response) {
   try {
-    const taskDetail: any = await findTaskByIdProjectAndIdTask(req.params.idProject, req.params.idTask);
-    const { procedure } = req.body;
-    // if (!procedure || procedure>WWWW.length||procedure<-1) throw new Error('Please enter only Number in The range');
+    const projectDetail = await Project.findById(req.params.idProject);
+    if (!projectDetail) throw new Error('Not found a Project');
 
-    // taskDetail.procedure = procedure;
-    // const reciveUpdateTask = await taskDetail.save();
+    const { name, description, createdAt, urgency, status, comments } = req.body;
 
-    // res.status(200).send(reciveUpdateTask);
+    const newTask = new Task({
+      idProject: req.params.idProject,
+      name,
+      description,
+      createdAt,
+      urgency,
+      status,
+      comments,
+    });
+
+    const reciveNewTask = await newTask.save();
+
+    res.status(200).send(reciveNewTask);
   } catch (error) {
-    res.status(400).send(error);
+    res.status(400).send((error as Error).message);
   }
 }
 
-async function createAndUpdateTask(req: Request, res: Response) {
+async function updateTask(req: Request, res: Response) {
   try {
-    const projectDetail: Project = await findProjectByIdProject(req.params.idProject);
-    const { taskName, timestamps, urgency, procedure, descriptionTask, comments } = req.body;
-    // const updateTask = await projectDetail.findOneAndUpdate(
-    //   { id: req.params.idProject },
-    //   { $set: { taskName, timestamps, urgency, procedure, descriptionTask, comments } },
-    //   { new: true, upsert: true, setDefaultsOnInsert: true }
-    // );
+    const { name, description, createdAt, urgency, status, comments } = req.body;
 
-    // res.status(200).send(updateTask);
+    const taskDetail = await Task.findByIdAndUpdate(
+      { _id: req.params.idTask },
+      { name, description, createdAt, urgency, status, comments },
+      {
+        new: true,
+      }
+    );
+    if (!taskDetail) throw new Error('Not found a task');
+
+    res.status(200).send(taskDetail);
   } catch (error) {
-    res.status(400).send(error);
+    res.status(400).send((error as Error).message);
   }
 }
-export {
-  getAllTaskDetails,
-  getTaskDetailsByIdTask,
-  getTasksDetailsByIdProject,
-  createAndUpdateTask,
-  changeTasksProcedure,
-};
+
+export { fetchTaskDetails, fetchTaskDetailsByIdTask, fetchTaskDetailsByIdProject, createTask, updateTask };

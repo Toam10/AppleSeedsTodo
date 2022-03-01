@@ -1,10 +1,12 @@
-import { Document } from "mongoose"
+import { Document } from 'mongoose';
+import { Schema } from 'mongoose';
 
 export interface TASK extends Document {
-  name: string
-  description: string
-  createdAt: Date
-  urgency: Number
-  status: Number
-  comments: [string]
+  idProject: Schema.Types.ObjectId;
+  name: string;
+  description: string;
+  createdAt: Date;
+  urgency: number;
+  status: number;
+  comments: [string];
 }

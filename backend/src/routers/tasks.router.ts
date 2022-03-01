@@ -1,19 +1,19 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 
 import {
-  getAllTaskDetails,
-  getTaskDetailsByIdTask,
-  getTasksDetailsByIdProject,
-  createAndUpdateTask,
-  changeTasksProcedure,
+  fetchTaskDetails,
+  fetchTaskDetailsByIdTask,
+  fetchTaskDetailsByIdProject,
+  createTask,
+  updateTask,
 } from '../controllers/tasks.controller';
 
 const tasksRouter = express.Router();
 
-tasksRouter.get('/getAllTaskDetails', getAllTaskDetails);
-tasksRouter.get('/getTasksDetailsByIdProject/:idProject', getTasksDetailsByIdProject);
-tasksRouter.get('/getTaskDetailsByIdTask/:idProject/:idTask', getTaskDetailsByIdTask);
-tasksRouter.put('/changeTasksProcedure/:idProject/:idTask', changeTasksProcedure);
-tasksRouter.put('/createAndUpdateTask/:idProject', createAndUpdateTask);
+tasksRouter.get('/fetchTaskDetails', fetchTaskDetails);
+tasksRouter.get('/fetchTaskDetailsByIdProject/:idProject', fetchTaskDetailsByIdProject);
+tasksRouter.get('/fetchTaskDetailsByIdTask/:idTask', fetchTaskDetailsByIdTask);
+tasksRouter.post('/setTask/:idProject', createTask);
+tasksRouter.put('/setTask/:idTask', updateTask);
 
 export { tasksRouter };

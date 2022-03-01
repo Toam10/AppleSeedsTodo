@@ -1,11 +1,11 @@
 import express from 'express';
 
-import { getAllProjectDetails, getProjectDetails, createProject } from '../controllers/projects.controller';
+import { fetchProjectDetails, fetchProjectDetailsById, setProject } from '../controllers/projects.controller';
 
 const projectsRouter = express.Router();
 
-projectsRouter.get('/getProjectDetails/:id', getProjectDetails);
-projectsRouter.get('/getAllProjectDetails', getAllProjectDetails);
-projectsRouter.post('/createProject', createProject);
+projectsRouter.get('/fetchProjectDetails', fetchProjectDetails);
+projectsRouter.get('/fetchProjectDetails/:id', fetchProjectDetailsById);
+projectsRouter.post('/setProject', setProject);
 
 export { projectsRouter };
