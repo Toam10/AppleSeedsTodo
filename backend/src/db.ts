@@ -1,8 +1,6 @@
-import * as mongoose from "mongoose";
-import { Project } from "./models/project";
-// tslint:disable-next-line:no-console
+import mongoose from "mongoose";
 
-const uri = "mongodb://localhost:27017/AppleSeedsTodo";
+// tslint:disable-next-line:no-console
 
 type TDBInput = {
     db: string;
@@ -11,8 +9,7 @@ type TDBInput = {
 export default ({ db }: TDBInput) => {
     const connect = () => {
         mongoose
-            .connect(db, {
-            })
+            .connect(db)
             .then(() => {
                 // tslint:disable-next-line:no-console
                 return console.info(`Successfully connected to Database`);
