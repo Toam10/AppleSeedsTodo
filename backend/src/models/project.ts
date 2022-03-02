@@ -1,5 +1,5 @@
 import { PROJECT } from './../types/project';
-import { TASK } from './../types/task';
+import { Task } from './../types/task';
 import { model, Schema } from 'mongoose';
 
 const taskSchema: Schema = new Schema(
@@ -61,6 +61,6 @@ const projectSchema: Schema = new Schema(
   },
   { timestamps: true }
 );
-const Task = model<TASK>('Task', taskSchema);
+const Task = model<Task>('Task', taskSchema);
 const Project = model<PROJECT>('Project', projectSchema);
 export { Task, Project };

@@ -1,6 +1,5 @@
 import { Request, Response } from 'express';
 import { Project, Task } from '../models/project';
-
 async function fetchTaskDetails(req: Request, res: Response) {
   try {
     const taskDetail = await Task.find();
@@ -14,7 +13,7 @@ async function fetchTaskDetailsByIdProject(req: Request, res: Response) {
   try {
     const { idProject } = req.params;
 
-    const taskDetails = await Task.findOne({ idProject });
+    const taskDetails = await Task.find({ idProject });
 
     if (!taskDetails) throw new Error('Not found a Task');
 
@@ -43,6 +42,7 @@ async function createTask(req: Request, res: Response) {
     if (!projectDetail) throw new Error('Not found a Project');
 
     const newTaskToSet = req.body;
+    newTaskToSet.idProject = idProject;
 
     const newTask = new Task(newTaskToSet);
 
@@ -106,7 +106,7 @@ async function createComment(req: Request, res: Response) {
 
     const reciveNewComment = await taskDetail.save();
 
-    res.status(200).send(reciveNewComment);
+    res.status(200).send(reciveNewComment.comments);
   } catch (error) {
     res.status(400).send((error as Error).message);
   }
@@ -117,18 +117,17 @@ async function deleteComment(req: Request, res: Response) {
     const { idTask } = req.params;
     const { idComment } = req.params;
 
-    const TaskDetail = await Task.findById(idTask);
-    if (!TaskDetail) throw new Error('Not found a Task');
+    const taskCheck = await Task.findById(idTask);
 
-    const commentDetails = TaskDetail.comments.find((comment) => comment._id.toString() === idComment);
-    if (!commentDetails) return res.status(404).send('Not found this Comment');
+    if (!taskCheck) throw new Error('Not found a Task');
 
-    const FilteredComments: any = TaskDetail.comments.filter((comment) => comment._id.toString() !== idComment);
+    const taskDetail = await Task.findByIdAndUpdate(idTask, { $pull: { comments: { _id: idComment } } }, { new: true });
 
-    TaskDetail.comments = FilteredComments;
-    const reciveFilteredComments = await TaskDetail.save();
+    if (!taskDetail) throw new Error('Not found a Task');
 
-    res.status(200).send(reciveFilteredComments.comments);
+    if (taskCheck.comments.length === taskDetail.comments.length) throw new Error('Not found a comment');
+
+    res.status(200).send(taskDetail.comments);
   } catch (error) {
     res.status(400).send((error as Error).message);
   }
