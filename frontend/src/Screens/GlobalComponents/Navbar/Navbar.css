@@ -5,12 +5,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-left: 56px;
+    /* padding-left: 56px; */
 }
 .navbar__activemode_leftSide{
     display: flex;
     align-items: center;
-    gap: 48px;
+    /* gap: 48px; */
 }
 .about:hover{
     text-decoration: underline;
