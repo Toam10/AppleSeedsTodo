@@ -3,12 +3,12 @@ import './Backlog.css';
 import Task from './components/Task/Task';
 import { Link } from 'react-router-dom';
 import { projects } from '../../../../backend/src/fakeData/project.fakeData';
-
+import {IProject} from '../../interfaces';
 const props = projects[0];
 Backlog(props);
 
-function Backlog(props) {
-    const { name, tasks } = props;
+function Backlog({ name, tasks }: IProject) {
+    // const { name, tasks } = props;
 
     return (
         <div className='backlog'>
@@ -29,10 +29,10 @@ function Backlog(props) {
                         </tr>
                     </thead>
                     <tbody>
-                        {tasks.map(task => (
+                        {tasks && tasks.map(task => (
                             <Task
                                 taskName={task.taskName}
-                                timesstamps={task.timesstamps}
+                                timestamps={task.timestamps}
                                 urgency={task.urgency}
                             />
                         ))}
