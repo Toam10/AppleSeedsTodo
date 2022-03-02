@@ -8,5 +8,10 @@ export interface TASK extends Document {
   createdAt: Date;
   urgency: number;
   status: number;
-  comments: [string];
+  comments: [
+    {
+      _id: Schema.Types.ObjectId;
+      comment: string;
+    }
+  ];
 }

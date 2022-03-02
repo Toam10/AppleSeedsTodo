@@ -29,7 +29,11 @@ const taskSchema: Schema = new Schema(
       type: Number,
       default: -1,
     },
-    comments: [String],
+    comments: [
+      {
+        comment: { type: String },
+      },
+    ],
   },
   { timestamps: true }
 );
