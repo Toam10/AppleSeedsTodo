@@ -5,14 +5,15 @@ import '../../../../../Style/FontSize.css'
 function Dropdown() {
     return (
         <div>
-            <div className="dropdown__menu">
+            <nav className="dropdown__menu">
                 <ul className="dropdown__list">
-                    <li className="dropdown__list__item">Project 1</li>
-                    <li className="dropdown__list__item">Project 2</li>
-                    <li className="dropdown__list__item">Project 3</li>
-                    <li className="dropdown__list__item">Project 4</li>
+                    <li className="dropdown__navbar">Select Project &nbsp;&#9660;</li>
+                    <li className="dropdown__list_item">Project 1</li>
+                    <li className="dropdown__list_item">Project 2</li>
+                    <li className="dropdown__list_item">Project 3</li>
+                    <li className="dropdown__list_item">Project 4</li>
                 </ul>
-            </div>
+            </nav>
         </div>
     );
 };
