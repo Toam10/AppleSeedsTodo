@@ -1,21 +1,18 @@
-.Cards__container{
-    
-}
 .Cards__Card{
     background-color: var(--white);
-    color: black;
-    width: 25rem;
-    height: 20rem;
+    color: var(--black);
+    width: 400px;
+    height: 320px;
     border-radius: 22px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 2rem;
+    gap: 32px;
     list-style: none;
     text-align: left;
-    padding: 1rem;
+    padding: 16px;
 }
 .Cards__Card li:nth-child(1){
     text-align: center;
-    width: 23rem;
+    width: 368px;
 }
