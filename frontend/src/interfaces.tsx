@@ -4,9 +4,9 @@ export interface IProject {
     description?: string;
     goal?: string;
     status?: boolean;
-    timestamps: Date;
+    timestamps?: Date;
     tasks?: Tasks;
-    id: string;
+    id?: string;
 }
 
 type Tasks = ITask[];

@@ -1,13 +1,16 @@
-import '../../../Style/Colors.css';
-import './Backlog.css';
+/**
+ *  <Link to={'/addTaskBacklog/'} className="button">Add Task</Link><Link to={'/board/'} className="button">Move To Board</Link>
+ */
+// import './Backlog.css';
 import Task from './components/Task/Task';
-import { Link } from 'react-router-dom';
-import { projects } from '../../../../backend/src/fakeData/project.fakeData';
+// import { Link } from 'react-router-dom';
+import { projects } from './fakeData/project.fakeData';
 import {IProject} from '../../interfaces';
-const props = projects[0];
-Backlog(props);
+const { name, tasks } = projects[0];
+Backlog();
 
-function Backlog({ name, tasks }: IProject) {
+function Backlog() {
+    // const props = projects[0];
     // const { name, tasks } = props;
 
     return (
@@ -16,8 +19,8 @@ function Backlog({ name, tasks }: IProject) {
                 <button className='projectName'>{name}</button>
             </div>
             <div className='backlog__twoButtons'>
-                <Link to={'/addTaskBacklog/'} className="button">Add Task</Link>
-                <Link to={'/board/'} className="button">Move To Board</Link>
+                <button className='projectName'>Add Task</button>
+                <button className='projectName'>Move To Board</button>
             </div>
             <div className='backlog__table'>
                 <table>
@@ -29,13 +32,7 @@ function Backlog({ name, tasks }: IProject) {
                         </tr>
                     </thead>
                     <tbody>
-                        {tasks && tasks.map(task => (
-                            <Task
-                                taskName={task.taskName}
-                                timestamps={task.timestamps}
-                                urgency={task.urgency}
-                            />
-                        ))}
+                        {}
                     </tbody>
                 </table>
             </div>

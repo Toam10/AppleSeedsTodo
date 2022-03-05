@@ -1,16 +1,16 @@
-import '../../../Style/Colors.css';
-import './Task.css';
+// import '../../../Style/Colors.css';
+// import './Task.css';
 import {ITask} from '../../../../interfaces';
 
 
 function Task(props: ITask) {
-    const { taskName, timestamps, urgency } = props;
-
+    console.log(props);
+    console.log(props.taskName);
     return (
         <tr>
-            <td>{taskName}</td>
-            <td>{timestamps}</td>
-            <td>{urgency}</td>
+            <td>{props.taskName}</td>
+            <td>{props.timestamps}</td>
+            <td>{props.urgency}</td>
         </tr>
 
     );
