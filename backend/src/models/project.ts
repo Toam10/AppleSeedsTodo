@@ -1,10 +1,12 @@
-import { PROJECT } from "./../types/project"
-import { TASK } from "./../types/task"
-import { model, Schema } from "mongoose"
-
+import { PROJECT } from './../types/project';
+import { Task } from './../types/task';
+import { model, Schema } from 'mongoose';
 
 const taskSchema: Schema = new Schema(
   {
+    idProject: {
+      type: Schema.Types.ObjectId,
+    },
     name: {
       type: String,
     },
@@ -19,18 +21,22 @@ const taskSchema: Schema = new Schema(
     },
 
     urgency: {
-        type: Number,
-        default:0,
-      },
+      type: Number,
+      default: 0,
+    },
 
     status: {
       type: Number,
-      default:-1,
+      default: -1,
     },
-    comments: [String],
+    comments: [
+      {
+        comment: { type: String },
+      },
+    ],
   },
-  {timestamps: true}
-)
+  { timestamps: true }
+);
 
 const projectSchema: Schema = new Schema(
   {
@@ -44,17 +50,17 @@ const projectSchema: Schema = new Schema(
     },
 
     goal: {
-        type: String,
-      },
+      type: String,
+    },
 
     labels: {
       type: [String],
-      default:["TODO","PROCESS","DONE"],
+      default: ['TODO', 'PROCESS', 'DONE'],
     },
     tasks: [taskSchema],
   },
-  {timestamps: true}
-)
-const Task = model<TASK>("Task", taskSchema)
-const Project = model<PROJECT>("Project", projectSchema)
-export {Project, Task};
+  { timestamps: true }
+);
+const Task = model<Task>('Task', taskSchema);
+const Project = model<PROJECT>('Project', projectSchema);
+export { Task, Project };
