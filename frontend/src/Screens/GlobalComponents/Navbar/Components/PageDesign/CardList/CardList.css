@@ -1,18 +1,7 @@
-.Cards__Card{
-    background-color: var(--white);
-    color: var(--black);
-    width: 400px;
-    height: 320px;
-    border-radius: 22px;
+.CardsList{
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 32px;
-    list-style: none;
-    text-align: left;
-    padding: 16px;
-}
-.Cards__Card li:nth-child(1){
-    text-align: center;
-    width: 368px;
+    flex-wrap: wrap;
+    width: 2000px;
+    justify-content: space-between;
+    padding-left: 8px;
 }
