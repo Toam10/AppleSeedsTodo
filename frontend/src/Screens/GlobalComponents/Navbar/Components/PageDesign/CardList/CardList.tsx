@@ -1,10 +1,10 @@
 import React from "react";
-import './ProjectCards.css';
+import './CardList.css';
 
 
-function ProjectCards() {
+function CardList() {
     return (
-        <div className="Cards__container">
+        <div className="CardsList__container">
             <ul className="Cards__Card">
                 <li>Project</li>
                 <li><strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. et dolore magna aliqua.</li>
@@ -14,4 +14,4 @@ function ProjectCards() {
     );
 };
 
-export default ProjectCards;
+export default CardList;

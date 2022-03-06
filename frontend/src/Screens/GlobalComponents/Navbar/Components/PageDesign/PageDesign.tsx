@@ -2,7 +2,7 @@ import React from "react";
 import './PageDesign.css';
 import '../../../../../Style/Colors.css';
 import '../../../../../Style/FontSize.css'
-import ProjectCards from "./ProjectCards/ProjectCards";
+import CardList from "./CardList/CardList";
 
 function PageDesign() {
     return (
@@ -12,14 +12,7 @@ function PageDesign() {
                     <h2>Projects</h2>
                 </div>
                 <div className="welcomePage__cards">
-                    <ProjectCards />
-                    <ProjectCards />
-                    <ProjectCards />
-                    <ProjectCards />
-                    <ProjectCards />
-                    <ProjectCards />
-                    <ProjectCards />
-                    <ProjectCards />
+                    <CardList />
                 </div>
             </div>
         </div>
