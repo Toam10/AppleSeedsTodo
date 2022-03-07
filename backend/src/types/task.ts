@@ -2,7 +2,6 @@ import { Document } from 'mongoose';
 import { Schema } from 'mongoose';
 
 export interface Task extends Document {
-  idProject: Schema.Types.ObjectId;
   name: string;
   description: string;
   createdAt: Date;

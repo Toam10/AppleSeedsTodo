@@ -1,12 +1,8 @@
-import { PROJECT } from './../types/project';
-import { Task } from './../types/task';
+import { PROJECT } from '../types/project';
 import { model, Schema } from 'mongoose';
 
 const taskSchema: Schema = new Schema(
   {
-    idProject: {
-      type: Schema.Types.ObjectId,
-    },
     name: {
       type: String,
     },
@@ -61,6 +57,7 @@ const projectSchema: Schema = new Schema(
   },
   { timestamps: true }
 );
-const Task = model<Task>('Task', taskSchema);
+
 const Project = model<PROJECT>('Project', projectSchema);
-export { Task, Project };
+
+export { Project };
