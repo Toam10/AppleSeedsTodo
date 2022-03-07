@@ -1,5 +1,5 @@
 import { TaskProps } from '../Types/TaskProps';
 
 export function Task(task: TaskProps) {
-  return <div>{task.name}</div>;
+  return <div className='row-task'>{task.name}</div>;
 }
