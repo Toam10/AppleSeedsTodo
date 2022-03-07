@@ -2,6 +2,7 @@ import React from 'react';
 import './Backlog.css';
 import '../../../Style/Colors.css'
 import '../../../Style/FontSize.css'
+import Task from './Task/Tasks';
 
 function Backlog() {
     return (
@@ -15,20 +16,19 @@ function Backlog() {
                     <li>Move to Board</li>
                 </ul>
             </div>
-            <div className='Backlog__Tasks'>
-                <div className='Backlog__Task-Header__Container'>
-                    <ul className='Backlog__Task-Header'>
+            <div className='Tasks'>
+                <div className='Task-Header__Container'>
+                    <ul className='Task-Header'>
                         <li>Task Name</li>
                         <li>Task Date</li>
                         <li>Task Urgency</li>
                     </ul>
                 </div>
-                <div className='Backlog__Task-List'>
-                    <ul className='Backlog__Task'>
-                        <li>Navbar</li>
-                        <li>24/02/22</li>
-                        <li></li>
-                    </ul>
+                <div className='Task-List'>
+                    <Task />
+                    <Task />
+                    <Task />
+                    <Task />
                 </div>
             </div>
         </div>
