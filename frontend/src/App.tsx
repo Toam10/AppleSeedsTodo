@@ -5,7 +5,7 @@ import './App.css';
 import PageDesign from './Screens/GlobalComponents/Navbar/Components/PageDesign/PageDesign';
 import './Screens/GlobalComponents/Navbar/Navbar';
 import Navbar from './Screens/GlobalComponents/Navbar/Navbar';
-import PageBoard from './Screens/Board/Board';
+import Board from './Screens/Board/Board';
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
 
         <Routes>
           <Route path='/' element={<PageDesign />} />
-          <Route path='board/:idProject' element={<PageBoard />} />
+          <Route path='board/:idProject' element={<Board />} />
         </Routes>
       </Router>
     </div>
