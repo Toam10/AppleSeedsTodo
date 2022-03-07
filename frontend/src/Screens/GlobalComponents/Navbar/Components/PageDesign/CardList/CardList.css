@@ -1,0 +1,12 @@
+.CardsList{
+    display: flex;
+    flex-wrap: wrap;
+    width: 2000px;
+    justify-content: space-between;
+    padding-left: 8px;
+}
+.CardsList a{
+    text-decoration: none;
+    height: 320px;
+    border-radius: 22px;
+}
