@@ -1,0 +1,72 @@
+.Backlog__Container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+    gap: 2rem;
+    
+}
+.Backlog__Page-Title{
+    background-color: var(--darkGrey);
+    color: var(--white);
+    padding: 1rem;
+    width: 24rem;
+    border-radius: 10px;
+}
+.Backlog__Buttons__Container{
+    width: 100%;
+    
+}
+.Backlog__Buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding-left: 10px;
+}
+.Backlog__Buttons li{
+    background-color: var(--darkGrey);
+    color: var(--white);
+    padding: 1rem;
+    width: 12rem;
+    border-radius: 10px;
+    list-style: none;
+    font-size: var(--pageBody__font);
+}
+.Tasks{
+    width: 100%;
+    background-color: var(--darkGrey);
+    /* border: red 2px solid; */
+}
+.Task-Header__Container{
+    color: var(--white);
+    padding: 16px;
+    
+}
+.Task-Header{
+    background-color: var(--white);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    justify-content: space-evenly;
+    height: 64px;
+    color: var(--black);
+}
+.Task-Header li{
+    width: 628px;
+    border-right: 2px solid;
+    font-size: var(--pageBody__font);
+    text-decoration: underline;
+}
+.Task-Header li:nth-child(3){
+    border: none;
+}
+.Task-List{
+    background-color: var(--grey);
+    height: 590px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow-y: auto;
+}
