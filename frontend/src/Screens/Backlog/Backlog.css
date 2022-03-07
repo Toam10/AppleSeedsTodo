@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.backlog {
+    background: #bbbead;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+    height: 877px;
+}
+
+.backlog__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    height: 94px;
+    left: 543px;
+    top: 194px;
+    border-radius: 16px;
+    padding: 20px;
+    padding-top: 89px;
+    padding-bottom: 55px;
+}
+
+.backlog__label {
+    color: #ffffff;
+    background: #2d2d2d;
+    border-radius: 16px;
+    padding: 20px 45px;
+    display: inline-block;
+    text-align: center;
+    text-align: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+}
+
+backlog__twoButtons {
+    height: 238px;
+}
+
+.backlog__btn1 {
+    height: 94px;
+    left: 16px;
+    top: 238px;
+    color: #ffffff;
+    background: #2d2d2d;
+    border-radius: 16px;
+    padding: 30px 68px;
+    text-align: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+}
+
+.backlog__btn2 {
+    height: 94px;
+    left: 323px;
+    top: 238px;
+    background: #2d2d2d;
+    border-radius: 16px;
+    padding: 30px 23px;
+    color: #ffffff;
+    display: inline-block;
+    text-align: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+}
+
+backlog__table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    height: 886px;
+    padding: 20px;
+    padding-top: 40px;
+}
+
+.projectName {
+    cursor: pointer;
+    background-color: var(--darkGrey);
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: inherit;
+    font-size: var(--pageBody__font);
+    transition: all 0.3s ease;
+}
+
+.backlog__table_header {
+    height: 117px;
+    left: 0px;
+    right: 0px;
+    top: 443px;
+    border-radius: 0px;
+    border: #000000 1px solid;
+    height: 117px;
+    left: 0px;
+    top: 443px;
+}
+
+tr {
+    display: inline;
+    height: 94px;
+    left: 16px;
+    right: 16px;
+    top: 454px;
+    background: #ffffff;
+    border-radius: 16px;
+    margin-bottom: 20px;
+}
+
+th {
+    text-decoration-line: underline;
+    color: #000000;
+}
+
+.taskName {
+    width: 181px;
+    left: 163px;
+}
+
+.taskDate {
+    width: 159px;
+    left: 678px;
+}
+
+.taskUrgency {
+    width: 216px;
+    left: 1158px;
+}
+
+.line1 {
+    width: 66px;
+    left: 506px;
+    height: 42px;
+}
+
+.line2 {
+    width: 66px;
+    left: 1005px;
+    height: 42px;
+}
+
+tbody {
+    background-color: var(--darkGrey);
+}
+
+.task {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.task1_1 {
+    height: 42px;
+    width: 115px;
+    left: 32px;
+    top: 25px;
+    border-radius: nullpx;
+    left: 2.16%;
+    right: 90.09%;
+    top: 28.09%;
+    bottom: 24.72%;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+    color: #000000;
+}
+
+.task1_2 {
+    height: 42px;
+    width: 192px;
+    left: 511px;
+    top: 25px;
+    border-radius: nullpx;
+    left: 34.46%;
+    right: 52.6%;
+    top: 28.09%;
+    bottom: 24.72%;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+    color: #000000;
+}
+
+.task1_3 {
+    height: 37px;
+    width: 353px;
+    left: 1073px;
+    top: 30px;
+    left: 72.35%;
+    right: 3.84%;
+    top: 33.71%;
+    bottom: 24.72%;
+    background: #ee4545;
+    border-radius: 22px;
+    border: 1px solid red;
+}
