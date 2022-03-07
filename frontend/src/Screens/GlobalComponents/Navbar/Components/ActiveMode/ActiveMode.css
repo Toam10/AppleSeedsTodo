@@ -12,4 +12,5 @@
 .Navbar__activemode{
     display: flex;
     gap: 48px;
+    padding-left: 10px;
 }

@@ -12,9 +12,9 @@
     text-align: left;
     padding: 16px;
 }
-.ProjectCard:hover{
+/* .ProjectCard:hover{
     cursor: pointer;
-}
+} */
 .ProjectCard li:nth-child(1){
     text-align: center;
     width: 368px;
