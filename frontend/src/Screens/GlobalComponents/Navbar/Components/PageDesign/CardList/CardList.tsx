@@ -10,7 +10,6 @@ function CardList() {
             <ProjectCard />
             <ProjectCard />
             <ProjectCard />
-
         </div>
     );
 };
