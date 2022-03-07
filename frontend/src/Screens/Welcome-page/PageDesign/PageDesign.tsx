@@ -2,7 +2,7 @@ import React from "react";
 import './PageDesign.css';
 import '../../../../../Style/Colors.css';
 import '../../../../../Style/FontSize.css'
-import CardList from "./CardList/CardList";
+import CardList from "../CardList/CardList";
 
 function PageDesign() {
     return (
