@@ -1,9 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
-
 import PageDesign from './Screens/GlobalComponents/Navbar/Components/PageDesign/PageDesign';
 import Navbar from './Screens/GlobalComponents/Navbar/Navbar';
-import PageBoard from './Screens/GlobalComponents/Navbar/Components/PageBoard/PageBoard';
-
+import Board from './Screens/Board/Board';
 import './App.css';
 
 function App() {
@@ -12,10 +10,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<PageDesign />} />
-        <Route path='board/:idProject' element={<PageBoard />} />
+        <Route path='board/:idProject' element={<Board />} />
       </Routes>
     </div>
   );
 }
-
 export default App;

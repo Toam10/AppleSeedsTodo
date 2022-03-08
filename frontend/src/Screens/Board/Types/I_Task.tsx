@@ -1,7 +1,6 @@
-import { Document } from 'mongoose';
-import { Schema } from 'mongoose';
-
-export interface Task extends Document {
+export interface I_Task {
+  _id: string;
+  idProject: string;
   name: string;
   description: string;
   createdAt: Date;
@@ -9,7 +8,7 @@ export interface Task extends Document {
   status: number;
   comments: [
     {
-      _id: Schema.Types.ObjectId;
+      _id: string;
       comment: string;
     }
   ];
