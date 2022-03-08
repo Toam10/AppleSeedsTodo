@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { Project } from '../models/project';
-import { Task } from '../types/task';
+
 async function fetchTaskDetailsByIdProject(req: Request, res: Response) {
   try {
     const { idProject } = req.params;
@@ -18,8 +18,7 @@ async function fetchTaskDetailsByIdProject(req: Request, res: Response) {
 
 async function fetchTaskDetailsByIdProjectAndIdTask(req: Request, res: Response) {
   try {
-    const { idTask } = req.params;
-    const { idProject } = req.params;
+    const { idProject, idTask } = req.params;
     const projectDetail = await Project.findById(idProject, { tasks: { $elemMatch: { _id: idTask } } });
     if (!projectDetail) throw new Error('Not found a Project');
     if (!projectDetail.tasks.length) throw new Error('Not found a Task');
@@ -51,8 +50,7 @@ async function createTask(req: Request, res: Response) {
 
 async function updateTask(req: Request, res: Response) {
   try {
-    const { idTask } = req.params;
-    const { idProject } = req.params;
+    const { idProject, idTask } = req.params;
 
     const { name, description, urgency, status } = req.body;
 
@@ -84,8 +82,7 @@ async function updateTask(req: Request, res: Response) {
 
 async function deleteTask(req: Request, res: Response) {
   try {
-    const { idTask } = req.params;
-    const { idProject } = req.params;
+    const { idProject, idTask } = req.params;
 
     const projectCheck = await Project.findById(idProject);
 
@@ -123,8 +120,7 @@ async function deleteAllTask(req: Request, res: Response) {
 
 async function getAllComments(req: Request, res: Response) {
   try {
-    const { idTask } = req.params;
-    const { idProject } = req.params;
+    const { idProject, idTask } = req.params;
 
     const projectDetail = await Project.findById(idProject, { tasks: { $elemMatch: { _id: idTask } } });
 
@@ -132,7 +128,8 @@ async function getAllComments(req: Request, res: Response) {
     if (!projectDetail.tasks.length) throw new Error('Not found a Task');
     if (!projectDetail.tasks[0].comments.length) throw new Error('Not found a Comment');
 
-    res.status(200).send(projectDetail.tasks[0].comments);
+    const comments = projectDetail.tasks[0].comments;
+    res.status(200).send(comments);
   } catch (error) {
     res.status(400).send((error as Error).message);
   }
@@ -140,9 +137,7 @@ async function getAllComments(req: Request, res: Response) {
 
 async function createComment(req: Request, res: Response) {
   try {
-    const { idTask } = req.params;
-    const { idProject } = req.params;
-
+    const { idProject, idTask } = req.params;
     const { comment } = req.body;
 
     const projectCheck = await Project.findById(idProject);
@@ -171,9 +166,7 @@ async function createComment(req: Request, res: Response) {
 
 async function deleteComment(req: Request, res: Response) {
   try {
-    const { idProject } = req.params;
-    const { idTask } = req.params;
-    const { idComment } = req.params;
+    const { idProject, idTask, idComment } = req.params;
 
     const projectCheck = await Project.findById(idProject);
     if (!projectCheck) throw new Error('Not found a Project');
