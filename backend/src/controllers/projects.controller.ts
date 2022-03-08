@@ -17,7 +17,6 @@ async function fetchProjectDetailsById(req: Request, res: Response) {
 
     const projectDetail = await Project.findById(id);
     if (!projectDetail) throw new Error('Not found a Project');
-    projectDetail.tasks = [];
 
     res.status(200).send(projectDetail);
   } catch (error) {

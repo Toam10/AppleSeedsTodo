@@ -31,13 +31,12 @@ function Board() {
   }, []);
 
   return (
-    <div>
-      <h2>Board</h2>
+    <>
       {labels.map((label: string, index: number) => {
         const relevantTasks = tasks.filter((task: I_Task) => task.status === index);
         return <List label={label} tasks={relevantTasks} key={label} />;
       })}
-    </div>
+    </>
   );
 }
 
