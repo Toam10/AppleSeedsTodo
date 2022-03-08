@@ -1,0 +1,7 @@
+.CardsList{
+    display: flex;
+    flex-wrap: wrap;
+    width: 2000px;
+    justify-content: space-between;
+    padding-left: 8px;
+}
