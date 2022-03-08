@@ -17,15 +17,15 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 16px;
     padding-left: 40px;
 }
 .welcomePage__cards{
     display: flex;
     flex-wrap: wrap;
     overflow-y: auto;
-    gap: 2rem;
-    width: 112rem;
-    height: 48rem;
+    gap: 32px;
+    width: 1792px;
+    height: 768px;
     justify-content: space-between;
 }
