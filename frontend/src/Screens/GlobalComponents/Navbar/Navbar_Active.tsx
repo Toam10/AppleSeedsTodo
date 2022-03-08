@@ -6,7 +6,7 @@ import ActiveMode from './Components/ActiveMode/ActiveMode';
 function Navbar() {
     return (
         <div>
-            <div className='navbar'>
+            <nav className='navbar'>
                 <div className='navbar__activemode_leftSide'>
                     <ActiveMode />
                     <h2 className='about'>About</h2>
@@ -14,7 +14,7 @@ function Navbar() {
                 <div className='navbar__activemode_rightSide'>
                     <h2 className='logo'>LOGO</h2>
                 </div>
-            </div>
+            </nav>
         </div>
     );
 };
