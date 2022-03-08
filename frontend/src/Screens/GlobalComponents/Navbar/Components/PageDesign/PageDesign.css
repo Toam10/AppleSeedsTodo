@@ -15,5 +15,17 @@
     color: var(--white);
     font-size: var(--pageBody__font);
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
     padding-left: 40px;
+}
+.welcomePage__cards{
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    gap: 32px;
+    width: 1792px;
+    height: 768px;
+    justify-content: space-between;
 }
